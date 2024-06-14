@@ -14,7 +14,6 @@ public class WebSecurityConfig {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.csrf().disable();
         http.httpBasic();
-
         http.authorizeHttpRequests().anyRequest().authenticated();
 
         return  http.build();

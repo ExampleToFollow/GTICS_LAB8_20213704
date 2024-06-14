@@ -29,7 +29,7 @@ public class HomeController {
         this.movieRepository = movieRepository;
         this.userRepository = userRepository;
     }
-    //Pregunta 1
+    //Pregunta 1 - EL PROYECTO ESTA CON SPRING SECURITY POR LO QE DEBE USAR UN BASIC AUTH EN POSTMAN CON EL USUARIO Y CONTRASEÑA GENERADOS AL MOMENTO DE CORRER EL PROYECTO
     @GetMapping(value="/peliculasEstreno")
     public Object getPeliculasEstreno() {
         try {
