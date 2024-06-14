@@ -90,8 +90,16 @@ public class HomeController {
             }
             //Todo validadado entonces procedemos a agregar la pelicula a la bd
             Movie m = new Movie();
-            m.setName(movieName);
-            m.setIdUser(u);
+
+            for (LinkedHashMap<String, Object> aux : list) {
+                if(((String) aux.get("original_title")).equals(movieName)){
+                    m.setName(movieName);
+                    m.setIdUser(u);
+                    m.setPopularity(""  + aux.get("popularity"));
+                    m.setOverview((String) aux.get("overview"));
+                    m.setReleaseDate("" + aux.get("release_date"));
+                }
+            }
             movieRepository.save(m);
             response.put("State", "Se guardo con exito la pelicula");
             response.put("Date", "" + LocalDateTime.now());
